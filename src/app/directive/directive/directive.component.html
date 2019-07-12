@@ -1,0 +1,80 @@
+<!-- ngIf=[gia_tri] 
+     gia tri:
+        1 tham số trả về kiểu boolean
+        1 phương thức trả về giá trị boolean
+        biểu thức (so sánh) trả về giá trị boolean        
+-->
+
+<div class="container">
+    <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">san pham 1</h4>
+            <p *ngIf="" class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni voluptates quos, a minima autem numquam esse eos, iure, eligendi magnam odio. Facilis quas fuga distinctio asperiores voluptas dolorem non tempore?
+            </p>
+            <button (click)="MoTa()" class="btn btn-success">Mo ta</button>
+        </div>
+    </div>
+    <!--  -->
+
+    <div class="form-group">
+        <span>Nhập vào số: </span>
+        <input #inputNumber type="text" class="form-control">
+        <span *ngIf="number%2 === 0; else tempSoLe">
+            So chan
+        </span>
+
+        <button (click)="testNumber(inputNumber)" class="btn btn-success">Submit</button>
+    </div>
+</div>
+
+<ng-template #tempSoLe>
+    <span>so le</span>
+</ng-template>
+
+<hr>
+
+<div class="container">
+
+    <h3>ngSwitch</h3>
+    <div [ngSwitch]='dkSwitch'>
+        <div *ngSwitchCase="'red'" style="color:red">Red</div>
+        <div *ngSwitchCase="'green'" style="color:green">Green</div>
+        <div *ngSwitchCase="'blue'" style="color:blue">Blue</div>
+        <div *ngSwitchDefault style="color:orange">Orange</div>
+    </div>
+
+    <select (change)="changeColor(slColor)" #slColor>
+        <option value="orange" selected>Orange</option>
+        <option value="red" >Red</option>
+        <option value="green" >Green</option>
+        <option value="blue" >Blue</option>
+    </select>
+</div>
+
+<hr>
+
+<div class="container">
+    <h3>ngFor</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ma SV</th>
+                <th>Ten SV</th>
+                <th>Tuoi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ngFor gắn vào thẻ nào sẽ lặp lại thẻ đó
+            tương đương dữ liệu của mảng -->
+            <tr [ngClass]="{'bg-dark text-white':i%2==0}" *ngFor="let sinhVien of dsSinhVien; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{sinhVien.maSV}}</td>
+                <td>{{sinhVien.tenSV}}</td>
+                <td>{{sinhVien.tuoi}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

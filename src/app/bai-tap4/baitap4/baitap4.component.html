@@ -1,0 +1,36 @@
+<div class="container">
+    <h4 class="bg-dark text-white p-2">Quan ly danh muc san pham</h4>
+    <div class="form-group">
+        <label for="">Ma SP</label>
+        <input #inputMaSP type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+
+        <label for="">Ten SP</label>
+        <input #inputTenSp type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <label for="">Gia</label>
+        <input #inputGia type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+    </div>
+    <button class="btn btn-success mb-4" (click)="themSP({maSP:inputMaSP.value,
+     tenSP:inputTenSp.value, gia:inputGia.value})">Them san pham</button>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ma SP</th>
+                <th>Ten SP</th>
+                <th>Gia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr [ngClass]="{'bg-light':i%2==0}" *ngFor="let sanPham of dsSanPham; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{sanPham.maSP}}</td>
+                <td>{{sanPham.tenSP}}</td>
+                <td>{{sanPham.gia.toLocaleString()}}</td>
+                <td><button (click)="xoaSP(sanPham.maSP)" class="btn btn-danger">Xoa</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,19 @@
+<!-- dữ liệu trên view (.html) được binding thông 
+qua thuộc tính của model (.ts) -->
+<p>{{title}}</p>
+<input type="text" [(ngModel)]="title">
+<ul>
+    <li>Ma SV: {{sinhVien.maSV}}</li>
+    <li>Ten SV: {{sinhVien.tenSV}}</li>
+</ul>
+<!--  -->
+<div class="container">
+    <div class="form-group">
+        <span>Ho ten</span><br>
+        <input #inputTenSV type="text" class="form-control" value="{{sinhVien.tenSV}}" />
+        <input type="text" class="form-control" [value]="sinhVien.maSV" />
+        <div [innerHTML]="sinhVien.tenSV"></div>
+    </div>
+
+    <button (click)="CapNhatSinhVien(inputTenSV)">Cap nhat</button>
+</div>
