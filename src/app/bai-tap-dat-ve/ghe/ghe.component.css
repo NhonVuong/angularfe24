@@ -1,0 +1,19 @@
+.ghe {
+    margin: 15px;
+    cursor: pointer;
+    background-color: rgb(110, 110, 110);
+    width: 42px;
+    height: 42px;
+    border: 1px solid;
+    border-radius: 5px;
+    color: white;
+}
+
+.gheDangDat {
+    background-color: green;
+}
+
+.gheDuocDat {
+    background-color: red;
+    cursor: no-drop;
+}

@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Baitap4Component implements OnInit {
   
-  dsSanPham:Array<{maSP:number, tenSP:string, gia:number}>=[
+  dsSanPham=[];
+
+  mangSP:Array<{maSP:number, tenSP:string, gia:number}>=[
     {maSP:1, tenSP:'dien thoai', gia:18000},
     {maSP:2, tenSP:'laptop', gia:25000},
     {maSP:3, tenSP:'may tinh bang', gia:15000},
@@ -16,6 +18,7 @@ export class Baitap4Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.dsSanPham = [...this.mangSP];//coppy mangSP => gan cho dsSanPham
   }
 
   themSP(sanPham:any){
@@ -27,5 +30,13 @@ export class Baitap4Component implements OnInit {
       this.dsSanPham.splice(index, 1);
     }
     // this.dsSanPham.splice(index, 1);
+  }
+
+  timKiemSP(tuKhoa:string){
+    if(tuKhoa == ""){
+      this.dsSanPham = [...this.mangSP];
+    }
+    tuKhoa = tuKhoa.toLowerCase();//chuyen thanh chu thuong
+    this.dsSanPham = this.mangSP.filter(sp => sp.tenSP.toLowerCase().indexOf(tuKhoa) !== -1)
   }
 }

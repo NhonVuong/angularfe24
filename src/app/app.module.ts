@@ -12,6 +12,8 @@ import { DataBindingModule } from './data-binding/data-binding.module';
 import { DirectiveModule } from './directive/directive.module';
 import { BaiTap3Module } from './bai-tap3/bai-tap3.module';
 import { BaiTap4Module } from './bai-tap4/bai-tap4.module';
+import { BaiTapContentComponentModule } from './bai-tap-content-component/bai-tap-content-component.module';
+import { BaiTapDatVeModule } from './bai-tap-dat-ve/bai-tap-dat-ve.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { BaiTap4Module } from './bai-tap4/bai-tap4.module';
     DataBindingModule,
     DirectiveModule,
     BaiTap3Module,
-    BaiTap4Module
+    BaiTap4Module,
+    BaiTapContentComponentModule,
+    BaiTapDatVeModule,
   ],//nơi import các module khác của ứng dụng vào module này
   bootstrap: [AppComponent]//component chạy trong file index.html
 })

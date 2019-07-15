@@ -1,0 +1,16 @@
+<div class="card">
+    <img class="card-img-top" src="holder.js/100x180/" alt="">
+    <div class="card-body">
+        <h4 class="card-title">
+            <!-- <ng-content select=".tenSP"></ng-content> -->
+            {{sanPham.tenSP}}
+        </h4>
+        <p class="card-text">
+            <!-- <ng-content select=".gia"></ng-content> -->
+            {{sanPham.gia}}
+        </p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-success" (click)="xemChiTiet()" data-toggle="modal" data-target="#modelId">Xem chi tiet</button>
+    </div>
+</div>
